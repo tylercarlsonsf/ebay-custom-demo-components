@@ -1,0 +1,23 @@
+<design:component label="ebay Contact Highlight Card">
+	
+    <design:attribute name="backgroundImageUrl" 
+                      label="Background Image URL" 
+                      default="/resource/ContactImageResources/ContactImageResources/ProfileHeader.png"
+                      description="URL for background image, for best results use image with height of 100px and at least 620px wide, 
+                                     package contains two samples that match the new 1Salesforce theme in the static resource folder (ProfileHeader1.png and ProfileHeader2.png)
+                                     leave this blank to just use a color background"/>
+    <design:attribute name="backgroundHexColor" 
+                      label="Background Hex Color" 
+                      default=""
+                      description="Set a background color with a hex code, must remove the image from above field, examples
+                                     ScienceBlue = #0070d2, MidnightBlue = #00396b, ServicePurple = # 963cbd" />
+    
+    
+    				  
+    <sfdc:objects >
+        <sfdc:object >Case</sfdc:object>
+        
+    </sfdc:objects>
+    
+    
+</design:component>

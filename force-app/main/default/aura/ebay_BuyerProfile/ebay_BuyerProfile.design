@@ -1,0 +1,11 @@
+<design:component label ="ebay Profile Metrics">
+	<design:attribute name="metric1" label="Metric 1"></design:attribute>
+    <design:attribute name="metric1Name" label="Metric 1 Label"></design:attribute>
+    <design:attribute name="metric2" label="Metric 2"></design:attribute>
+    <design:attribute name="metric2Name" label="Metric 2 Label"></design:attribute>
+    <design:attribute name="metric3" label="Metric 3"></design:attribute>
+    <design:attribute name="metric3Name" label="Metric 3 Label"></design:attribute>
+    <design:attribute name="metric4" label="Metric 4"></design:attribute>
+    <design:attribute name="metric4Name" label="Metric 4 Label"></design:attribute>
+    <design:attribute name="stubhub" label="Enable stubhub images"></design:attribute>
+</design:component>

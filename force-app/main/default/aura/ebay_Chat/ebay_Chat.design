@@ -1,0 +1,8 @@
+<design:component Label="ebay Chat" >
+	<design:attribute name="recommendedResponse" label="Recommended Response" />
+    
+    <sfdc:objects >
+        <sfdc:object >Case</sfdc:object>
+        
+    </sfdc:objects>
+</design:component>

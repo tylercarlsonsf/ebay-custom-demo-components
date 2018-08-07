@@ -1,0 +1,28 @@
+<design:component label="Two Column Custom Record Page Template">
+    <flexipage:template >
+        <!-- The default width for the "left" region is "MEDIUM". In tablets,
+        the width is "SMALL" -->
+            <flexipage:region name="right" defaultWidth="LARGE">
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+
+            </flexipage:region>
+            <flexipage:region name="left" defaultWidth="SMALL">
+        		<flexipage:formfactor type="LARGE" width="SMALL" />
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+
+        	</flexipage:region>
+        
+        	<flexipage:region name="topLeft" defaultWidth="SMALL">
+        		<flexipage:formfactor type="LARGE" width="SMALL" />
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+
+        	</flexipage:region>
+        	<flexipage:region name="topRight" defaultWidth="SMALL">
+        		<flexipage:formfactor type="LARGE" width="SMALL" />
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+
+        	</flexipage:region> 
+                              
+            
+       </flexipage:template>
+</design:component>

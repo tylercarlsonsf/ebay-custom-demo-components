@@ -1,0 +1,7 @@
+<design:component label="ebay Case Highlights Panel">
+	
+    <sfdc:objects >
+        <sfdc:object >Case</sfdc:object>
+        
+    </sfdc:objects>
+</design:component>

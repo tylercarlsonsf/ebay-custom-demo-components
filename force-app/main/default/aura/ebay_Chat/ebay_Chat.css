@@ -1,0 +1,63 @@
+.THIS .message-body-right {
+  display: inline-block; 
+  color: white;
+  background: #0a1c6b;
+  padding: 8px 8px;
+  line-height: 16px;
+  font-size: 12px;  
+  border-radius: 8px 8px 0px 8px;  
+  margin-bottom: 8px;
+  max-width: 250px;  
+  text-align: right;
+  position: relative;
+}
+
+.THIS .message-body-right2 {
+  display: inline-block; 
+  color: white;
+  background: #006efc;
+  padding: 8px 8px;
+  line-height: 16px;
+  font-size: 12px;  
+  border-radius: 8px 8px 0px 8px;  
+  margin-bottom: 16px;
+  max-width: 250px;  
+  text-align: right;
+  position: relative;
+}
+
+.THIS .message-body-left {
+  display: inline-block;
+  
+  background: #eef1f6;  
+  padding: 8px 12px;
+  line-height: 16px;
+  font-size: 12px;
+  border-radius: 8px 8px 8px 0px;
+  margin-bottom: 8px;
+  max-width: 250px;  
+  text-align: left;
+  
+}
+
+.THIS .chat {
+    background: #FDFDFD;
+    position:relative;
+    
+     
+    
+}
+
+.THIS .chat-history {
+    overflow-y: scroll;
+    z-index:2;
+   /* height:55vh; */
+    
+}
+
+.THIS .header {
+    z-index:1;
+}
+.THIS .text {
+    padding:8px;
+}

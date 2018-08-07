@@ -1,0 +1,15 @@
+<design:component label="ebay Next Best Action">
+    <design:attribute name="title" label="Card Title"></design:attribute>
+    
+    <design:attribute name="rec1" label="recommendation 1"></design:attribute>
+	<design:attribute name="message1" label="message 1"></design:attribute>
+    <design:attribute name="icon1" label="icon 1"></design:attribute>
+    
+    <design:attribute name="rec2" label="recommendation 2"></design:attribute>
+	<design:attribute name="message2" label="message 2"></design:attribute>
+    <design:attribute name="icon2" label="icon 2"></design:attribute>
+    
+    <design:attribute name="rec3" label="recommendation 3"></design:attribute>
+	<design:attribute name="message3" label="message 3"></design:attribute>
+    <design:attribute name="icon3" label="icon 3"></design:attribute>
+</design:component>

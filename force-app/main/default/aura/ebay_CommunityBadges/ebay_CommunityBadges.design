@@ -1,0 +1,16 @@
+<design:component label ="ebay Community Badges">
+    <design:attribute name="headerImage" 
+                      default="https://trailhead.salesforce.com/assets/trailhead-logo-d08befd2d122442532289967a988aa7a49eef27154969718441fbde0bd122fe8.svg"
+                      />
+    
+    <design:attribute name="image1"/>
+    <design:attribute name="title1"/>
+    <design:attribute name="image2"/>
+    <design:attribute name="title2"/>
+    <design:attribute name="image3"/>
+    <design:attribute name="title3"/>
+    <design:attribute name="image4"/>
+    <design:attribute name="title4"/>
+    <design:attribute name="image5"/>
+    <design:attribute name="title5"/>
+</design:component>

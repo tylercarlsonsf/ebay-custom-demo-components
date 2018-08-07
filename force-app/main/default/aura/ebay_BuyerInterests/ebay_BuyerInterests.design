@@ -1,0 +1,19 @@
+<design:component label="ebay Profile Interests">
+	<design:attribute name="interest1" label="Interest 1 Title"></design:attribute>
+    <design:attribute name="image1" label="Interest 1 Image"></design:attribute>
+    <design:attribute name="strength1" label="Interest 1 Strength"></design:attribute>
+    <design:attribute name="count1" label="Interest 1 Purchase Count"></design:attribute>
+    <design:attribute name="interest2" label="Interest 2 Title"></design:attribute>
+    <design:attribute name="image2" label="Interest 2 Image"></design:attribute>
+    <design:attribute name="strength2" label="Interest 2 Strength"></design:attribute>
+    <design:attribute name="count2" label="Interest 2 Purchase Count"></design:attribute>
+    <design:attribute name="interest3" label="Interest 3 Title"></design:attribute>
+    <design:attribute name="image3" label="Interest 3 Image"></design:attribute>
+    <design:attribute name="strength3" label="Interest 3 Strength"></design:attribute>
+    <design:attribute name="count3" label="Interest 3 Purchase Count"></design:attribute>
+    <design:attribute name="interest4" label="Interest 4 Title"></design:attribute>
+    <design:attribute name="image4" label="Interest 4 Image"></design:attribute>
+    <design:attribute name="strength4" label="Interest 4 Strength"></design:attribute>
+    <design:attribute name="count4" label="Interest 4 Purchase Count"></design:attribute>
+    
+</design:component>

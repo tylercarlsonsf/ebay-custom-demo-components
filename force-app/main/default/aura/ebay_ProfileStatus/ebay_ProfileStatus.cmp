@@ -1,0 +1,108 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" >
+	<aura:attribute name="record" type="Object"/>
+    <aura:attribute name="fields" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="contactFields" type="String[]" access="global" default="Name,Ebay_Journey__c,Cust360_CSAT__c,Cust360_Loyalty__c,Cust360_LTV__c,Cust360_ChurnRisk__c"/>
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      fields="{!v.contactFields}"                      
+                      targetRecord="{!v.record}"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.fields}"
+                      mode="EDIT"
+                      recordUpdated="{!c.handleRecordUpdated}"
+      				  />
+    
+	<div class="slds-card">        
+        
+        <lightning:progressIndicator currentStep="{!v.fields.Ebay_Journey__c}" type="path" variant="base" class="slds-m-horizontal_medium slds-p-top_medium">
+            <lightning:progressStep label="Buyer" value="Buyer" onclick="{!c.setBuyer}"/> 
+            <lightning:progressStep label="StubHub" value="StubHub" onclick="{!c.setStubHub}"/> 
+            <lightning:progressStep label="Seller" value="Seller" onclick="{!c.setSeller}"/> 
+            
+        </lightning:progressIndicator> 
+    </div>    
+    <!--
+	<lightning:card>
+		<aura:set attribute="title">
+        	<span style="font-weight:700;">Curent Status: {!v.fields.Ebay_Journey__c}</span>
+        </aura:set>
+
+    <div class="slds-progress">
+      <ol class="slds-progress__list">
+        <aura:if isTrue="{! v.fields.Ebay_Journey__c == 'Buyer'}">
+            <a>
+            <li class="slds-progress__item slds-is-active">
+                <button class="slds-button slds-progress__marker" >
+                    <span class="slds-assistive-text"></span>
+                    
+                </button>
+            </li>
+            </a>
+            <aura:set attribute = "else">
+                <a>
+                <li class="slds-progress__item slds-is-completed">
+                  <button class="slds-button slds-button_icon slds-button_icon slds-progress__marker slds-progress__marker_icon completed" title="" onclick="{!c.setBuyer}">
+                    <lightning:icon iconName="utility:success" size="x-small" class="completed-icon"></lightning:icon>
+                    <span class="slds-assistive-text">Buyer</span>
+                  </button>
+                </li>
+                </a>     
+            </aura:set>       
+        </aura:if>
+        	<a>
+            <li class="slds-progress__item">
+              <button class="slds-button slds-button_icon slds-button_icon slds-progress__marker slds-progress__marker_icon completed" title="" onclick="{!c.setSeller}">
+                  <lightning:icon iconName="utility:success" size="x-small" class="completed-icon"></lightning:icon>
+                  <span class="slds-assistive-text">Buyer</span>
+                </button>
+            </li>
+            </a>
+          	<a>
+            <li class="slds-progress__item">
+              <button class="slds-button slds-button_icon slds-button_icon slds-progress__marker slds-progress__marker_icon completed" title="" onclick="{!c.setSuperSeller}">
+                  <lightning:icon iconName="utility:success" size="x-small" class="completed-icon"></lightning:icon>
+                  <span class="slds-assistive-text">Buyer</span>
+                </button>
+            </li>  
+          	</a>
+      </ol>
+      <aura:if isTrue="{! v.fields.Ebay_Journey__c == 'SuperSeller'}">
+          <div class="slds-progress-bar slds-progress-bar_x-small progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" role="progressbar">
+            <span class="slds-progress-bar__value" style="width:100%">
+              <span class="slds-assistive-text">Progress: 100%</span>
+            </span>
+          </div>
+          <aura:set attribute="else">
+                <aura:if isTrue="{! v.fields.Ebay_Journey__c == 'Seller'}">
+                      <div class="slds-progress-bar slds-progress-bar_x-small progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" role="progressbar">
+                        <span class="slds-progress-bar__value" style="width:50%">
+                          <span class="slds-assistive-text">Progress: 50%</span>
+                        </span>
+                      </div>
+                	<aura:set attribute="else">
+                    	<div class="slds-progress-bar slds-progress-bar_x-small progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" role="progressbar">
+                            <span class="slds-progress-bar__value" style="width:0%">
+                              <span class="slds-assistive-text">Progress: 0%</span>
+                            </span>
+                          </div>
+                    
+                    </aura:set>
+                  
+               	</aura:if>    
+          
+          
+          </aura:set>
+          
+      </aura:if> 
+        
+      
+    </div>    
+    
+   	     
+	</lightning:card>
+	-->
+
+</aura:component>

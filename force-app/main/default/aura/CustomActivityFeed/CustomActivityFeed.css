@@ -1,0 +1,87 @@
+.THIS .feed{
+    overflow-y: scroll;
+    z-index: 2;
+    height: 275px;
+}
+.THIS {
+    position: relative;
+}
+.THIS .activity-icon {
+     background-color: #6666d1;
+}
+
+
+.THIS .slds-media__figure {
+    z-index: 1;
+}
+
+.THIS ul li h3 {
+    padding-bottom: 15px;
+}
+
+.THIS ul li p {
+    min-height: 30px;
+}
+
+.THIS .slds-media--timeline:before {
+    z-index: 1;
+}
+
+.THIS .slds-media--timeline:before {
+    z-index: 1;
+}
+
+.THIS .slds-timeline__icon {
+    background-color: white;
+}
+.THIS .slds-timeline__media--event:before {
+    background-color: #eb7092;
+}
+
+.THIS .slds-timeline__media--skill:before {
+    background-color: #fa975c;
+}
+
+.THIS .slds-timeline__media--sossession:before {
+    background-color: #54698d;
+}
+
+.THIS .slds-timeline__media--topic:before {
+    background-color: #56aadf;
+}
+
+.THIS .slds-timeline__media--task:before {
+    background-color: #4bc076;
+}
+
+.THIS .slds-timeline__media--feed:before {
+    background-color: #62b7ed;
+}
+
+.THIS .slds-timeline__media--question-feed:before {
+    background-color: #f2cf5b;
+}
+
+.THIS .slds-timeline__media--log-a-call:before {
+    background-color: #48c3cc;
+}
+
+.THIS .slds-timeline__media--social:before {
+    background-color: #ea74a2
+}
+
+.THIS .slds-timeline__media--social:before {
+    background-color: #eb7092
+}
+
+.THIS .slds-timeline__media--thanks:before {
+    background-color: #e9696e
+}
+
+.THIS .slds-timeline__media--poll:before {
+    background-color: #699be1
+}
+
+.THIS .timeline--orange:before {
+    background-color: #f39e58
+}

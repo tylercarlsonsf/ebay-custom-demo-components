@@ -1,0 +1,59 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+    <aura:attribute name="metric1" type="String"></aura:attribute>
+    <aura:attribute name="metric2" type="String"></aura:attribute>
+    <aura:attribute name="metric3" type="String"></aura:attribute>
+    <aura:attribute name="metric4" type="String"></aura:attribute>
+    <aura:attribute name="metric1Name" type="String"></aura:attribute>
+    <aura:attribute name="metric2Name" type="String"></aura:attribute>
+    <aura:attribute name="metric3Name" type="String"></aura:attribute>
+    <aura:attribute name="metric4Name" type="String"></aura:attribute>
+    <aura:attribute name="stubhub" type="boolean"></aura:attribute>
+    
+    
+    <lightning:layout>
+        <aura:if isTrue="{!v.metric1}">
+    	<lightning:layoutItem padding="around-small" size="3">
+        	<div class="slds-box box1">
+            	<div class="metric">{!v.metric1}</div>
+                <div class="metric-name">{!v.metric1Name}</div>
+            </div>
+        </lightning:layoutItem>
+        </aura:if>
+        <aura:if isTrue="{!v.metric2}">
+        <lightning:layoutItem padding="around-small" size="3">
+        	<div class="slds-box box2">
+            	<div class="metric">{!v.metric2}</div>
+                <div class="metric-name">{!v.metric2Name}</div>
+            </div>
+        </lightning:layoutItem>
+        </aura:if>
+        <aura:if isTrue="{!v.metric3}">
+        <lightning:layoutItem padding="around-small" size="3">
+        	<div class="slds-box box3">
+                <div class="slds-grid">
+                	<aura:if isTrue="{!v.stubhub}"><div class="stubhub"></div></aura:if>
+            		<div class="metric slds-col_bump-left">{!v.metric3}</div>
+                </div>
+                
+                <div class="metric-name">{!v.metric3Name}</div>
+                
+            </div>
+        </lightning:layoutItem>
+        </aura:if>
+        <aura:if isTrue="{!v.metric4}">
+        <lightning:layoutItem padding="around-small" size="3">
+        	<div class="slds-box box4">
+                 <div class="slds-grid">
+                	<aura:if isTrue="{!v.stubhub}"><div class="stubhub"></div></aura:if>
+            		<div class="metric slds-col_bump-left">{!v.metric4}</div>
+                </div>
+                <div class="metric-name">{!v.metric4Name}</div>
+                
+            </div>
+        </lightning:layoutItem>
+        </aura:if>
+    </lightning:layout>
+    
+    
+	
+</aura:component>

@@ -1,0 +1,41 @@
+.THIS .slds-path__nav .slds-is-current {
+    background-color: #078b89;
+}
+.THIS .slds-path__nav .slds-is-current+.slds-is-incomplete:before {
+    background-color: #078b89;
+}
+.THIS .slds-path__nav .slds-is-complete.slds-is-focused {
+    background-color: #078b89;
+}
+.THIS .slds-path__nav .slds-is-active,.THIS .slds-path__nav .slds-is-complete.slds-is-focused {
+    background-color: #078b89;
+}
+.THIS .slds-path__nav .slds-is-complete {
+    background-color: #00d5c3;
+}
+.THIS .slds-path__item+.slds-is-complete:before, .THIS .slds-path__item+.slds-is-current:before {
+    background-color: #00d5c3;
+}
+.THIS .slds-path__nav .slds-is-active+.slds-path__item:before {
+    background-color: #078b89;
+}
+
+.THIS .progress-bar .slds-progress-bar__value{
+    background: #00a699 !important;
+    
+}
+.THIS .slds-progress__item.slds-is-completed .slds-progress__marker, .THIS .slds-progress__item.slds-is-active .slds-progress__marker {
+    background: rgb(255, 255, 255);
+    border-color: #00A699;
+}
+.THIS .completed-icon .slds-icon-text-default{
+    fill: #00a699;
+    
+}
+.THIS .completed {
+    border-color: #FFFFFF !important;
+    
+}
+.THIS .slds-progress{
+    max-width:90%;
+}

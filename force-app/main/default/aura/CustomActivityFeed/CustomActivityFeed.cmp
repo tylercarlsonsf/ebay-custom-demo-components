@@ -1,0 +1,186 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" controller="CustomActivityController" access="global" >
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="activities" type="Custom_Activity__c[]"/>
+    <aura:attribute name="activities2" type="Custom_Activity__c[]"/>
+    <aura:attribute name="activities3" type="Custom_Activity__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <force:recordData aura:id="recordHandler"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      mode="EDIT"
+      recordUpdated="{!c.handleRecordUpdated}"
+      />
+    
+    <lightning:quickActionAPI aura:id="quickActionAPI"/>
+
+    
+    
+    <lightning:card >
+        
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+                <lightning:buttonIcon onclick="{!c.newActivity}" iconName="utility:add"/>
+                <lightning:buttonIcon onclick="{!c.doInit}" iconName="utility:refresh"/>
+            </lightning:buttonGroup>
+            
+                
+            
+        </aura:set>
+		
+        <aura:set attribute="title">
+                    <lightning:icon iconName="standard:feed" size="medium" class="activity-icon"></lightning:icon>
+                    <span class="slds-text-heading_small slds-m-left_medium" style="font-weight:700;">Activity Timeline</span>
+            		
+        </aura:set>
+        
+        <div class="feed slds-p-top_medium">
+            <!--
+            <div class="SMALL uiTabset _ base uiTabset _ task uiTabset oneActionsComposer forceActionsContainer slds-p-bottom_large">
+                <div role="application tablist" class="uiTabBar">
+                    <ul class="tabs__nav" role="presentation">
+                        <li class="tabs__item active uiTabItem" role="presentation">
+                            <a class="tabHeader" tabindex="0" role="tab" href="javascript:void(0);">
+                                <span class="title">Email</span>
+                            </a>
+                        </li>
+                        
+                        <li class="tabs__item uiTabItem" role="presentation">
+                            <a class="tabHeader" role="tab" href="javascript:void(0);">
+                                <span class="title">New Task</span>
+                            </a>
+                        </li>
+                        <li class="tabs__item uiTabItem" role="presentation">
+                            <a class="tabHeader" role="tab" href="javascript:void(0);">
+                                <span class="title">New Event</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <section class="tabs__content active uiTab">
+                    <div class="testid__publisher-quick-action-collapser collapsedState forcePublisherQuickActionCollapser">
+                        <div class="slds-grid dummyControlsContainer">
+                            <button class="slds-button slds-button_neutral slds-col slds-no-space dummyButtonCallToAction uiButton" type="button">
+                                <span class=" label bBody truncate" dir="ltr">Write an email...</span>
+                            </button>
+                            <button class="slds-button slds-button_brand testid__dummy-button-submit-action slds-col slds-no-space dummyButtonSubmitAction uiButton" type="button">
+                                <span class=" label bBody truncate">Compose</span>
+                            </button>
+                        </div>
+                        <div class="placeholderContainer slds-clearfix slds-hide">
+                        </div>
+                        <div class="slds-hide">
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+           	
+            
+            
+            <!--<div class="slds-media slds-media_center slds-p-bottom_large">
+                <div class="slds-media_figure">
+                	<lightning:icon iconName="standard:feed" size="medium" class="activity-icon"></lightning:icon>
+                </div>
+                <div class="slds-media_body">
+                	<span class="slds-text-heading_small slds-m-left_medium" style="font-weight:700;">Activity Timeline</span>
+                </div>
+                	
+            </div>-->
+            	<ul>
+                	<aura:if isTrue="{! (v.simpleRecord.Ebay_Journey__c == 'Seller') }">
+                        <aura:iteration items="{!v.activities3}" var="a">
+                        <c:ActivityFeedItem icon="{!a.icon__c}" 
+                                        title="{!a.Name}" 
+                                        message="{!a.message__c}"  
+                                        daysAgo="{!a.days_ago__c}" 
+                                        time="{!a.time__c}"
+                                        id="{!a.Id}"
+                                        color="{!a.Color__c}"   />
+                        
+                        
+                        </aura:iteration>
+                	</aura:if>
+                    
+                    
+                    <aura:if isTrue="{! (v.simpleRecord.Ebay_Journey__c == 'StubHub') || (v.simpleRecord.Ebay_Journey__c == 'Seller') }">
+                        <aura:iteration items="{!v.activities2}" var="a">
+                        <c:ActivityFeedItem icon="{!a.icon__c}" 
+                                        title="{!a.Name}" 
+                                        message="{!a.message__c}"  
+                                        daysAgo="{!a.days_ago__c}" 
+                                        time="{!a.time__c}"
+                                        id="{!a.Id}"
+                                        color="{!a.Color__c}"   />
+                        
+                        
+                        </aura:iteration>
+                	</aura:if>
+                
+                    
+                    
+                    <aura:iteration items="{!v.activities}" var="a">
+                	<c:ActivityFeedItem icon="{!a.icon__c}" 
+                                    title="{!a.Name}" 
+                                    message="{!a.message__c}"  
+                                    daysAgo="{!a.days_ago__c}" 
+                                    time="{!a.time__c}"
+                                    id="{!a.Id}"
+                                    color="{!a.Color__c}"   />
+                    
+                	
+                	</aura:iteration>
+                    
+                
+                    
+                <!--
+                <c:ActivityFeedItem icon="standard:omni_supervisor" 
+                                    title="Added to Journey" 
+                                    message="Added to creator journey"  
+                                    daysAgo="3" 
+                                    time="12:15 PM" />
+                <c:ActivityFeedItem icon="custom:custom27" 
+                                    title="Device Log In" 
+                                    message="Logged in on HP Spectre x360" 
+                                    daysAgo="3" 
+                                    time="12:10 PM" />
+                <c:ActivityFeedItem icon="standard:bot" 
+                                    title="Chatbot Conversation" 
+                                    message="Set pick up appointment at HP Garage " 
+                                    daysAgo="3" 
+                                    time="4:17 PM" />
+                <c:ActivityFeedItem icon="standard:omni_supervisor" 
+                                    title="Added to Journey" 
+                                    message="Added to HP Garage Journey"  
+                                    daysAgo="3" 
+                                    time="4:15 PM" />
+                <c:ActivityFeedItem icon="custom:custom28" 
+                                    title="Joined HP Garage" 
+                                    message="Joined HP Garage via Mobile App"  
+                                    daysAgo="3" 
+                                    time="4:14 PM" />
+                <c:ActivityFeedItem icon="custom:custom28" 
+                                    title="Instagram Ad Click" 
+                                    message="Engaged with Instagram ad" 
+                                    daysAgo="4" 
+                                    time="4:10 PM" />
+                <c:ActivityFeedItem icon="custom:custom101" 
+                                    title="Ad Audience" 
+                                    message="Joined look a like ad audience" 
+                                    daysAgo="5" 
+                                    time="3:16 PM"  /> -->
+
+            </ul>
+            
+        </div>
+        <aura:set attribute="footer">
+        	<lightning:button label="View More" variant="bare"></lightning:button>
+        </aura:set>
+         
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,247 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="timeMinusOne" type="DateTime"/>
+    <aura:attribute name="timePlusOne" type="DateTime"/>
+    <aura:attribute name="time" type="DateTime"/>
+    <aura:attribute name="height" type="Integer"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="recommendedResponse" type="String"/>
+    
+    <ltng:require scripts="/resource/jQuery321/" afterScriptsLoaded="{!c.checkJquery}"/>
+	
+    <div class ="chat slds-container slds-clearfix" >
+    	
+        <div class="chat-history" id="chatHistory" style = "{! 'height:' + v.height + 'px'+ ';'}">
+        
+            <div class="header slds-border_bottom">
+                <div class="chat-start slds-text-color_weak slds-align_absolute-center slds-p-bottom_small">           	 
+                    <span class="slds-m-right_x-small"><lightning:icon iconName="utility:chat" size="small"></lightning:icon></span>
+                    
+                    Chat started by 
+                    <span class="slds-m-left_x-small slds-m-right_x-small"><img src="{!$Resource.Sam}" style="height:24px;width:24px;border-radius:50%;" alt="avatar" /></span> 
+                    <b>Laura Gomez </b> &nbsp; &bull; &nbsp;{!v.timeMinusOne}
+                </div>
+                        
+            </div>
+            
+        	<div class="chat-history-list slds-m-top_large">
+            	
+                <!-- start melanie first message-->
+                
+                <div class="message-left slds-grid slds-grid_align-start">
+                    <div class="message-header slds-m-right_small slds-m-bottom_x-small ">
+                        <div class="chat-avatar slds-m-left_x-small">
+                            <img src="{!$Resource.Sam}" style="height:35px;width:35px;border-radius:50%;" alt="avatar" />
+                        </div>
+                    </div>
+                                       
+                    
+                    <div class="message-body-left   slds-m-left">
+                        I am having trouble adding more inventory to my store.
+                    </div>                   
+					
+                    
+				</div>
+                
+              <!-- end melanie first response-->  
+                
+                
+                
+                <!-- start initial bot message -->
+                <div class="message-right slds-grid slds-grid_align-end">
+                    
+                    <div class="message-body-right slds-col">
+                        Hi Laura, I am the ebay help bot. Don't worry, I am here to help! One common cause for your issue is images exceeding file limit.
+                    </div>
+                   
+					<div class="message-header slds-col slds-m-left_small slds-m-bottom_x-small ">
+                        <div class="spacer slds-m-right_x-small" style="height:35px;width:35px;">
+                            
+                        </div>
+                    </div>
+                    
+				</div>
+                
+                <div class="message-right slds-grid slds-grid_align-end">
+                    
+                    <div class="message-body-right slds-col">
+                        Can you confirm that the images you are using do not exceed the file size limit?
+                    </div>
+                   
+					
+                    <div class="message-header slds-col slds-m-left_small slds-m-bottom_x-small ">
+                        <span class="chat-avatar slds-m-right_x-small">
+                            <img src="{!$Resource.BotIcon}" style="height:35px;width:35px;" alt="avatar" />
+                        </span>
+                    </div>
+                    
+				</div>
+                
+                
+                <!--<div class="message-after-right slds-text-body_small slds-text-color_weak slds-text-align_right slds-m-right_xx-large" >
+                    	<span class="slds-p-right_small">Start Service Bot</span>
+                </div>-->
+                
+               <!-- end initial bot message-->
+                
+               
+                
+              
+              <!-- start melanie second response-->  
+                <div class="message-left slds-grid slds-grid_align-start">
+                    <div class="message-header slds-m-right_small slds-m-bottom_x-small ">
+                        <div class="chat-avatar slds-m-left_x-small">
+                            <img src="{!$Resource.Sam}" style="height:35px;width:35px;border-radius:50%;" alt="avatar" />
+                        </div>
+                    </div>
+                                       
+                    
+                    <div class="message-body-left   slds-m-left">
+                        I did, but I'm still having issues. The error suggests I talk with an agent, can you connect me?
+                    </div>                   
+					
+                    
+				</div>
+            <!-- end melanie second response--> 
+            
+              <!-- start melanie third response 
+                <div class="message-left slds-grid slds-grid_align-start">
+                    <div class="message-header slds-m-right_small slds-m-bottom_x-small ">
+                        <div class="chat-avatar slds-m-left_x-small">
+                            <img src="{!$Resource.Sam}" style="height:35px;width:35px;border-radius:50%;" alt="avatar" />
+                        </div>
+                    </div>
+                                       
+                    
+                    <div class="message-body-left   slds-m-left">
+                        Are these still available?
+                    </div>                   
+					
+                    
+				</div>--> 
+            <!-- end melanie third response-->
+            <!-- start bot third response -->
+                
+                             
+                <div class="message-right slds-grid slds-grid_align-end">
+                    
+                    <div class="message-body-right slds-col">
+                       Sure, I can connect you to an agent right away... Just one moment please!
+                    </div>
+                   
+					
+                    <div class="message-header slds-col slds-m-left_small slds-m-bottom_x-small ">
+                        <span class="chat-avatar slds-m-right_x-small">
+                            <img src="{!$Resource.BotIcon}" style="height:35px;width:35px;" alt="avatar" />
+                        </span>
+                    </div>
+                    
+				</div>
+                
+                <!--
+                <div class="message-after-right slds-text-body_small slds-text-color_weak slds-text-align_right slds-m-right_xx-large" >
+                    	<span class="slds-p-right_small">Start Service Bot</span>
+                </div>
+				-->
+               <!-- end bot third response-->
+                
+               <!-- start melanie fourth response  
+                <div class="message-left slds-grid slds-grid_align-start slds-m-bottom_medium">
+                    <div class="message-header slds-m-right_small slds-m-bottom_x-small ">
+                        <div class="chat-avatar slds-m-left_x-small">
+                            <img src="{!$Resource.Sam}" style="height:35px;width:35px;border-radius:50%;" alt="avatar" />
+                        </div>
+                    </div>
+                                       
+                    
+                    <div class="message-body-left   slds-m-left">
+                        I still have some questions
+                    </div>                   
+					
+                    
+				</div>
+               end melanie fourth response-->
+                <!--
+                <div class="message-right slds-grid slds-grid_align-end">
+                    
+                    <div class="message-body-right slds-col">
+                        No problem Sam, I will transfer you to an agent.
+                    </div>
+                   
+					
+                    <div class="message-header slds-col slds-m-left_small slds-m-bottom_x-small ">
+                        <span class="chat-avatar slds-m-right_x-small">
+                            <img src="{!$Resource.BotIcon}" style="height:35px;width:35px;" alt="avatar" />
+                        </span>
+                    </div>
+                    
+				</div>
+                -->
+                <div class="header slds-border_bottom slds-border_top slds-m-bottom_medium">
+                    <div class="chat-start slds-text-color_weak slds-align_absolute-center slds-p-bottom_small slds-p-top_small">           	 
+                        <span class="slds-m-right_x-small"><lightning:icon iconName="utility:chat" size="small"></lightning:icon></span>
+                        
+                        Chat transfered by 
+                        <span class="slds-m-left_x-small slds-m-right_x-small"><img src="{!$Resource.BotIcon}" style="height:24px;width:24px;" alt="avatar" /></span> 
+                        <b>ebay Helper Bot </b> &nbsp; &bull; &nbsp;{!v.timePlusOne}
+                    </div>
+                        
+            	</div>
+                
+                <aura:if isTrue="{!v.message}">
+                    <div class="message-right slds-grid slds-grid_align-end slds-m-top_large">
+                        
+                        <div class="message-body-right2 slds-col">
+                            {!v.message}
+                        </div>
+                       
+                        
+                        <div class="message-header slds-col slds-m-left_small slds-m-bottom_medium ">
+                            <span class="chat-avatar slds-m-right_x-small">
+                                <img src="/profilephoto/7291H000000WF9g/M" style="height:35px;width:35px;border-radius:50%;" alt="avatar" />
+                            </span>
+                        </div>
+                        
+                    </div>
+                </aura:if>
+                
+                
+            </div>  <!-- end chat-history-list -->       
+           
+       	</div> <!-- end chat-history -->
+        
+        <div class = "chat-footer" style="">
+            
+            <div class="slds-grid slds-wrap slds-p-top_xx-small slds-p-bottom_xx-small slds-border_bottom slds-border_top" style="background:#eef1f6;">
+                
+                <div class="slds-col slds-size_7-of-8 slds-p-left_small">
+                    <lightning:buttonGroup >
+                    	<lightning:buttonIcon iconName="utility:file" variant="border-filled" alternativeText="Request File" />
+                        <lightning:buttonIcon iconName="utility:change_owner" variant="border-filled" alternativeText="Transfer Chat" />
+                        <lightning:buttonIcon iconName="utility:bold" variant="border-filled" alternativeText="Text Formatting" />
+                        <lightning:buttonIcon iconName="utility:priority" variant="border-filled" alternativeText="Flag" />
+                    </lightning:buttonGroup>
+                    	<lightning:buttonIcon iconName="utility:dock_panel" variant="border-filled" alternativeText="Pop Out Chat" onclick="{!c.clearResponse}" />
+                    	<button class="slds-button slds-button_neutral recommendation " onclick="{!c.recommendResponse}">
+                            <lightning:dynamicIcon type="strength" option="3" alternativeText="Recommended Response" />
+                            <span class="slds-m-left_small">Recommended Response</span>
+                    	</button>
+                </div>
+                <div class="slds-col slds-size_1-of-8">
+                    <span class="slds-align_absolute-center  slds-m-right_x-small"><lightning:button label="Send" variant="brand" onclick="{!c.sendAndScroll}" ></lightning:button></span>
+                </div>                      
+                
+            </div>
+            <div class="message-area" >
+                    <textarea class="text" name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3" style="width:100%;height:100%;border:none;resize:none;"></textarea>
+            </div>
+                                     
+        </div>
+        
+	</div> <!-- end chat -->
+    
+    
+    
+    
+</aura:component>

@@ -1,0 +1,19 @@
+<design:component label="ebay Seller Listings">
+    <design:attribute name="listing1" label="listing 1 Title"></design:attribute>
+    <design:attribute name="image1" label="listing 1 Image"></design:attribute>
+    <design:attribute name="price1" label="listing 1 price"></design:attribute>
+    <design:attribute name="count1" label="listing 1 listing Count"></design:attribute>
+    <design:attribute name="listing2" label="listing 2 Title"></design:attribute>
+    <design:attribute name="image2" label="listing 2 Image"></design:attribute>
+    <design:attribute name="price2" label="listing 2 price"></design:attribute>
+    <design:attribute name="count2" label="listing 2 listing Count"></design:attribute>
+    <design:attribute name="listing3" label="listing 3 Title"></design:attribute>
+    <design:attribute name="image3" label="listing 3 Image"></design:attribute>
+    <design:attribute name="price3" label="listing 3 price"></design:attribute>
+    <design:attribute name="count3" label="listing 3 listing Count"></design:attribute>
+    <design:attribute name="listing4" label="listing 4 Title"></design:attribute>
+    <design:attribute name="image4" label="listing 4 Image"></design:attribute>
+    <design:attribute name="price4" label="listing 4 price"></design:attribute>
+    <design:attribute name="count4" label="listing 4 listing Count"></design:attribute>
+	
+</design:component>

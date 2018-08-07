@@ -1,0 +1,76 @@
+.THIS .metric{
+    font-size:32px;
+    font-weight:700;
+    text-align: right;
+    
+}
+.THIS .metric-name{
+    font-weight:700;
+    font-size:16px;
+    text-align: right;
+    
+}
+.THIS .box1{
+    background-color: #c2f5ff;
+    color: #0a1c6b;
+    border: 0px;
+    position: relative;
+}
+.THIS .box2{
+    background-color: #c1faf2;
+    color: #078b89;
+    border: 0px;
+    position: relative;
+}
+.THIS .box3{
+    background-color: #ccccf0;
+    color: #430078;
+    border: 0px;
+    position: relative;
+}
+.THIS .box4{
+    background-color: #faccd4;
+    color: #85006b;
+    border: 0px;
+    position: relative;
+}
+.THIS .stubhub {
+    position: relative;
+    display: inline-block;
+    background-image: url(/resource/stubhub/);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:90%;    
+    height:32px;
+	width:66px;
+}
+/*Blues:
+#c2f5ff
+#006efc
+#1436d9
+#0a1c6b
+
+Pinks:
+#faccd4
+#d166bd
+#b0008f
+#85006b
+
+Purples:
+#ccccf0
+#6666d1
+#5839b5
+#430078
+
+Oranges:
+#f2ebc8
+#ffbea6
+#ff954f
+#ff5919
+
+Greens:
+#c1faf2
+#00d5c3
+#00a795
+#078b89
+*/
